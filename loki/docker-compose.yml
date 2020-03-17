@@ -7,7 +7,7 @@ services:
       - "3100:3100"
     command: -config.file=/etc/loki/local-config.yaml
     networks:
-      - grafana
+      - grafana_grafana
 
   promtail:
     image: grafana/promtail:latest
@@ -15,4 +15,4 @@ services:
       - /var/log:/var/log
     command: -config.file=/etc/promtail/docker-config.yaml
     networks:
-      - grafana
+      - grafana_grafana
